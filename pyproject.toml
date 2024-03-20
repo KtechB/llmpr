@@ -1,0 +1,47 @@
+[tool.poetry]
+name = "llmpr"
+version = "0.1.0"
+description = ""
+authors = ["KtechB <k_techevo@yahoo.co.jp>"]
+readme = "README.md"
+packages = [{include = "llmpr", from = "src"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+polars = "^0.20.13"
+pandas = "^2.2.1"
+torch = {version = "2.1.2", source = "torch_cu121"}
+immutabledict = "^4.1.0"
+sentencepiece = "^0.1.0"
+gemma = {path = "gemma_pytorch"}
+sentence-transformers = "2.4"
+transformers = "^4.38.2"
+trl = "^0.7.11"
+peft = "^0.9.0"
+ninja = "^1.11.1.1"
+packaging = "^23.2"
+huggingface-hub = "^0.21.4"
+bitsandbytes = "^0.43.0"
+wandb = "^0.16.4"
+python-dotenv = "^1.0.1"
+vllm = "^0.3.3"
+openai = "^1.14.0"
+nltk = "^3.8.1"
+
+
+[tool.poetry.group.dev.dependencies]
+mypy = "^1.8.0"
+ruff = "^0.3.0"
+black = "^24.2.0"
+pytest = "^8.0.2"
+jupyter = "^1.0.0"
+
+
+[[tool.poetry.source]]
+name = "torch_cu121"
+url = "https://download.pytorch.org/whl/cu121"
+priority = "explicit"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
